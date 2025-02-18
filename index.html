@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord des Drones</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h2>Drones Disponibles</h2>
+            <ul id="drone-list"></ul>
+        </aside>
+        <main class="content">
+            <h2 id="drone-name">Sélectionnez un drone</h2>
+            <div class="data">
+                <p><strong>Température :</strong> <span id="temperature"></span> °C</p>
+                <p><strong>Humidité :</strong> <span id="humidity"></span> %</p>
+                <p class="data" id="tank" style="display: none;">
+                    <strong>Stockage restant :</strong> <span id="tank-value"></span> mL
+                </p>
+            </div>
+            <div id="map"></div>
+        </main>
+             
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
