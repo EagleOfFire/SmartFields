@@ -8,6 +8,15 @@ const drones = [
     { name: "Spraying Drone 3", latitude: 43.455111 ,longitude: 6.150306, humidity: 36, temperature: 28, tank: 12456}
 ];
 
+const champs = [
+    { name: "Champ 1", latitude: 43.461833 ,longitude: 6.139694},
+    { name: "Champ 2", latitude: 43.460167 ,longitude: 6.148361},
+    { name: "Champ 3", latitude: 43.466778 ,longitude: 6.146778},
+    { name: "Champ 4", latitude: 43.461667 ,longitude: 6.152306},
+    { name: "Champ 5", latitude: 43.469917 ,longitude: 6.151889},
+    { name: "Champ 6", latitude: 43.455111 ,longitude: 6.150306}
+];
+
 let map, marker;
 
 // Fonction pour initialiser la carte Leaflet
@@ -75,10 +84,44 @@ function displayDroneData(index) {
     marker.setLatLng(newLocation);
 }
 
+// Function to call the drone back
+function callDroneBack() {
+    alert("Le drone est rappelé à la base.");
+}
+
+// Function to select the target field
+function selectTargetField(fieldIndex) {
+    const field = champs[fieldIndex];
+    const droneIndex = getDroneIndexFromQuery();
+    const drone = drones[droneIndex];
+
+    if (drone.latitude === field.latitude && drone.longitude === field.longitude) {
+        alert("Le drone est déjà à cet endroit.");
+    } else {
+        const newLocation = [field.latitude, field.longitude];
+        map.setView(newLocation, 15);
+        marker.setLatLng(newLocation);
+        alert(`Le drone se dirige vers ${field.name}.`);
+    }
+}
+
+// Function to populate the field buttons
+function populateFieldButtons() {
+    const controlZone = document.querySelector(".control-drone");
+
+    champs.forEach((field, index) => {
+        const button = document.createElement("button");
+        button.textContent = field.name;
+        button.addEventListener("click", () => selectTargetField(index));
+        controlZone.appendChild(button);
+    });
+}
+
 // Charger la liste de drones et initialiser la carte au chargement
 document.addEventListener("DOMContentLoaded", () => {
     populateDroneList();
     initMap();
     const droneIndex = getDroneIndexFromQuery();
     displayDroneData(droneIndex);
+    populateFieldButtons();
 });

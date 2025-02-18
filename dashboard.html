@@ -17,6 +17,12 @@
         <main class="content">
             <button id="back-button" onclick="window.location.href='drone_select_screen.html'">Retour à la sélection</button>
             <h2 id="drone-name">Sélectionnez un drone</h2>
+            <div class="control-zone">
+                <h3>Contrôle du Drone</h3>
+                <div class="control-drone">
+                    <button onclick="callDroneBack()">Rappeler le Drone</button>
+                </div>
+            </div>
             <div class="data">
                 <p><strong>Température :</strong> <span id="temperature"></span> °C</p>
                 <p><strong>Humidité :</strong> <span id="humidity"></span> %</p>
