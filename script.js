@@ -1,11 +1,11 @@
 // Liste de drones prédéfinis avec leurs données
 const drones = [
-    { name: "Crop Analyser 1", latitude: 43.461833 ,longitude: 6.139694, humidity: 41, temperature: 21 , progressionMission : 50},
-    { name: "Spraying Drone 1", latitude:43.460167 ,longitude: 6.148361, humidity: 39, temperature: 22, tank: 40000, progressionMission : 100},
-    { name: "Crop Analyser 2",latitude: 43.466778 ,longitude: 6.146778, humidity: 35, temperature: 24, progressionMission : 2 },
-    { name: "Spraying Drone 2",latitude: 43.461667 ,longitude: 6.152306, humidity: 40, temperature: 25, tank: 25786, progressionMission : 32},
-    { name: "Crop Analyser 3", latitude: 43.469917 ,longitude: 6.151889, humidity: 39, temperature: 27, progressionMission : 82 },
-    { name: "Spraying Drone 3", latitude: 43.455111 ,longitude: 6.150306, humidity: 36, temperature: 28, tank: 12456, progressionMission : 25}
+    { name: "Crop Analyser 1", id: "CA", latitude: 43.461833 ,longitude: 6.139694, humidity: 41, temperature: 21 , progressionMission : 50},
+    { name: "Spraying Drone 1", id: "SD" , latitude:43.460167 ,longitude: 6.148361, humidity: 39, temperature: 22, tank: 40000, progressionMission : 100},
+    { name: "Crop Analyser 2", id: "CA",latitude: 43.466778 ,longitude: 6.146778, humidity: 35, temperature: 24, progressionMission : 2 },
+    { name: "Spraying Drone 2" , id: "SD",latitude: 43.461667 ,longitude: 6.152306, humidity: 40, temperature: 25, tank: 25786, progressionMission : 32},
+    { name: "Crop Analyser 3", id: "CA", latitude: 43.469917 ,longitude: 6.151889, humidity: 39, temperature: 27, progressionMission : 82 },
+    { name: "Spraying Drone 3", id: "SD", latitude: 43.455111 ,longitude: 6.150306, humidity: 36, temperature: 28, tank: 12456, progressionMission : 25}
 ];
 
 const champs = [
