@@ -10,6 +10,9 @@
 </head>
 <body>
     <div class="dashboard">
+        <!-- From Uiverse.io by theleaderofenemy --> 
+<div class="container"></div>
+
         <aside class="sidebar">
             <h2>Drones Disponibles</h2>
             <ul id="drone-list"></ul>
@@ -21,6 +24,8 @@
                 <h3>Contrôle du Drone</h3>
                 <div class="control-drone">
                     <button onclick="callDroneBack()">Rappeler le Drone</button>
+                    <!-- Container for field buttons -->
+                    <div id="field-buttons"></div>
                 </div>
             </div>
             <div class="data">
@@ -29,10 +34,18 @@
                 <p class="data" id="tank" style="display: none;">
                     <strong>Stockage restant :</strong> <span id="tank-value"></span> mL
                 </p>
+                <p><strong>Temps restant :</strong> <span id="remaining-time"></span></p>
+            </div>
+            <div class="progress-container">
+                <p><strong>Progression de la mission :</strong></p>
+                <div id="progress-bar-container">
+                    <div id="progress-bar">
+                        <span id="progression"></span>
+                    </div>
+                </div>
             </div>
             <div id="map"></div>
         </main>
-             
     </div>
     <script src="script.js"></script>
 </body>

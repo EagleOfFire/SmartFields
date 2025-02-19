@@ -8,6 +8,31 @@ body {
     align-items: center;
 }
 
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays in the background */
+    --s: 60px;
+    --c1: #6ca700;
+    --c2: #406102;
+    --_g: radial-gradient(
+      25% 25% at 25% 25%,
+      var(--c1) 99%,
+      rgba(0, 0, 0, 0) 101%
+    );
+    background: var(--_g) var(--s) var(--s) / calc(2 * var(--s))
+        calc(2 * var(--s)),
+      var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)),
+      radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s)
+        var(--s),
+      repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%)
+        calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
+}
+  
+
 .dashboard {
     display: flex; /* Flexbox pour aligner la sidebar et le contenu horizontalement */
     height: 100%; /* Prendre toute la hauteur disponible */
@@ -132,4 +157,25 @@ ul {
 
 .control-zone button:hover {
     background-color: #d3d3d3;
+}
+
+#progress-bar-container {
+    width: 100%;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+    position: relative;
+}
+
+#progress-bar {
+    height: 20px;
+    background-color: #4caf50;
+    width: 0;
+    transition: width 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
 }
