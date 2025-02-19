@@ -1,11 +1,12 @@
 const drones = [
-    { name: "Crop Analyser 1", latitude: 43.461833 ,longitude: 6.139694, temperature: 41, humidity: 21 },
-    { name: "Spraying Drone 1", latitude:43.460167 ,longitude: 6.148361, temperature: 39, humidity: 22, tank: 40000},
-    { name: "Crop Analyser 2",latitude: 43.466778 ,longitude: 6.146778, temperature: 35, humidity: 24 },
-    { name: "Spraying Drone 2",latitude: 43.461667 ,longitude: 6.152306, temperature: 40, humidity: 25, tank: 25786},
-    { name: "Crop Analyser 3", latitude: 43.469917 ,longitude: 6.151889, temperature: 39, humidity: 27 },
-    { name: "Spraying Drone 3", latitude: 43.455111 ,longitude: 6.150306, temperature: 36, humidity: 28, tank: 12456}
+    { name: "Crop Analyser 1", id: "CA", latitude: 46.21136335607866, longitude: -1.0540007933154585, humidity: 41, temperature: 21 , progressionMission : 50},
+    { name: "Spraying Drone 1", id: "SD" , latitude: 46.21468459184598, longitude: -1.0492372620941983, humidity: 39, temperature: 22, tank: 40000, progressionMission : 100},
+    { name: "Crop Analyser 2", id: "CA",latitude: 46.213123885767715, longitude: -1.0612723958994275, humidity: 35, temperature: 24, progressionMission : 2 },
+    { name: "Spraying Drone 2" , id: "SD",latitude: 46.21293518604642, longitude: -1.0492439090964956, humidity: 40, temperature: 25, tank: 25786, progressionMission : 32},
+    { name: "Crop Analyser 3", id: "CA", latitude: 46.21976497216588, longitude: -1.058556538536209, humidity: 39, temperature: 27, progressionMission : 82 },
+    { name: "Spraying Drone 3", id: "SD", latitude: 46.21674423739498, longitude: -1.0650762680199144, humidity: 36, temperature: 28, tank: 12456, progressionMission : 25}
 ];
+
 
 let map, marker;
 
