@@ -27,6 +27,15 @@ body {
     color: #FFFFF0;
 }
 
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    #map {
+        height: calc(100vh + 100px); /* Adjust the height to go beyond the screen */
+    }
+}
+
 h2 {
     margin-bottom: 20px;
 }

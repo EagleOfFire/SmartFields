@@ -8,13 +8,15 @@ const drones = [
     { name: "Spraying Drone 3", id: "SD", latitude: 46.21674423739498, longitude: -1.0650762680199144, humidity: 36, temperature: 28, tank: 12456, progressionMission : 25}
 ];
 
+const farm = [
+    { latitude: 46.21468459184598 ,longitude: -1.0492372620941983},
+];
+
 const champs = [
-    { name: "Champ 1", latitude: 43.461833 ,longitude: 6.139694},
-    { name: "Champ 2", latitude: 43.460167 ,longitude: 6.148361},
-    { name: "Champ 3", latitude: 43.466778 ,longitude: 6.146778},
-    { name: "Champ 4", latitude: 43.461667 ,longitude: 6.152306},
-    { name: "Champ 5", latitude: 43.469917 ,longitude: 6.151889},
-    { name: "Champ 6", latitude: 43.455111 ,longitude: 6.150306}
+    { name: "Champ 1", latitude: 46.21136335607866 ,longitude: -1.0540007933154585},
+    { name: "Champ 2", latitude:  46.213123885767715 ,longitude: -1.0612723958994275},
+    { name: "Champ 3", latitude: 46.21976497216588 ,longitude: -1.058556538536209},
+    { name: "Champ 4", latitude: 46.21293518604642 ,longitude: -1.0492439090964956}
 ];
 
 const champs1 = [
@@ -189,7 +191,9 @@ function selectTargetField(fieldIndex) {
             fieldMarker = L.marker(fieldLocation, { icon: L.icon({ iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png' }) }).addTo(map);
         }
 
-        alert(`Le drone se dirige vers ${field.name}.`);
+        // Recenter the map to show both the drone and the field markers
+        const bounds = L.latLngBounds([fieldLocation, [drone.latitude, drone.longitude]]);
+        map.fitBounds(bounds);
     }
 }
 
@@ -204,6 +208,20 @@ function populateFieldButtons() {
         controlZone.appendChild(button);
     });
 }
+
+// Function to update the back button text on mobile
+function updateBackButtonText() {
+    const backButton = document.getElementById("back-button");
+    if (window.innerWidth <= 768) {
+        backButton.textContent = "Retour";
+    } else {
+        backButton.textContent = "Retour à la sélection";
+    }
+}
+
+// Update the back button text on load and on resize
+window.addEventListener("DOMContentLoaded", updateBackButtonText);
+window.addEventListener("resize", updateBackButtonText);
 
 // Charger la liste de drones et initialiser la carte au chargement
 document.addEventListener("DOMContentLoaded", () => {
